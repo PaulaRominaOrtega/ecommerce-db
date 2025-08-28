@@ -1,27 +1,21 @@
 const express = require("express");
 const router = express.Router();
 
-const direccionesController = require("../../controllers/direcciones.controller");
-const {
-    validateDireccionCreate,
-    validateDireccionUpdate,
-    validateDireccionId,
-    validatePagination
-} = require("../../middleware/validation");
+const direccionesController = require("../controllers/direcciones.controller");
 
 // GET /api/direcciones - Obtener todas las direcciones (con paginación y filtro por idCliente)
-router.get("/", validatePagination, direccionesController.getDirecciones);
+router.get("/",direccionesController.getDirecciones);
 
 // GET /api/direcciones/:id - Obtener una dirección por ID
-router.get("/:id", validateDireccionId, direccionesController.getDireccion);
+router.get("/:id", direccionesController.getDireccion);
 
 // POST /api/direcciones - Crear una nueva dirección
-router.post("/", validateDireccionCreate, direccionesController.createDireccion);
+router.post("/", direccionesController.createDireccion);
 
 // PUT /api/direcciones/:id - Actualizar una dirección
-router.put("/:id", validateDireccionId, validateDireccionUpdate, direccionesController.updateDireccion);
+router.put("/:id", direccionesController.updateDireccion);
 
 // DELETE /api/direcciones/:id - Eliminar una dirección (hard delete)
-router.delete("/:id", validateDireccionId, direccionesController.deleteDireccion);
+router.delete("/:id", direccionesController.deleteDireccion);
 
 module.exports = router;

@@ -45,9 +45,5 @@ const Pago = sequelize.define(
       timestamps: false,
     }
   );
-  Pago.belongsTo(Pedido, { 
-    foreignKey: "idPedido" });
-
-
 
   module.exports = Pago;

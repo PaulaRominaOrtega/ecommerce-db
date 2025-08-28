@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const productoController = require("../../controllers/productos.controller");
+const productoController = require("../controllers/productos.controller");
 const {
     validateProductoCreate,
     validateProductoUpdate,
     validateProductoId,
     validatePagination
-} = require("../../middleware/validation");
+} = require("../middleware/validation");
 
 // GET /api/productos - Obtener todos los productos
 router.get("/", validatePagination, productoController.getProductos);

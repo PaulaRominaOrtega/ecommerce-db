@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const clientesController = require("../../controllers/clientes.controller");
+const clientesController = require("../controllers/clientes.controller");
 const {
     validateClienteCreate,
     validateClienteUpdate,
     validateClienteId,
     validatePagination
-} = require("../../middleware/validation");
+} = require("../middleware/validation");
 
 // GET /api/clientes - Obtener todos los clientes con paginación
 router.get("/", validatePagination, clientesController.getClientes);

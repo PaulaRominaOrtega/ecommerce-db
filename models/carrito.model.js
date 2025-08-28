@@ -1,7 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
-const Producto= require("./producto.model");
-const Cliente= require("./cliente.model");
+
 
 const Carrito = sequelize.define(
     "Carrito",
@@ -33,25 +32,5 @@ const Carrito = sequelize.define(
     }
   );
 
-Cliente.hasOne(Carrito, {foreignKey: "idCliente",onDelete: "CASCADE",});
-Carrito.belongsTo(Cliente, {foreignKey: "idCliente",});  
-
-Carrito.belongsToMany(Producto, {
-    through: CarritoProducto,
-    foreignKey: "idCarrito",
-    otherKey: "idProducto",
-  });
-  Producto.belongsToMany(Carrito, {
-    through: CarritoProducto,
-    foreignKey: "idProducto",
-    otherKey: "idCarrito",
-  });
-  Carrito.belongsTo(Cliente, { 
-    foreignKey: "idCliente" });
-  Carrito.belongsToMany(Producto, {
-    through: CarritoProducto,
-    foreignKey: "idCarrito",
-    otherKey: "idProducto",
-  });
   
 module.exports = Carrito;

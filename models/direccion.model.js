@@ -1,6 +1,5 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
-const Rol = require("./rol.model");
 
 
 const Direccion = sequelize.define(
@@ -47,8 +46,5 @@ const Direccion = sequelize.define(
       timestamps: false,
     }
   );
-
-Direccion.belongsTo(Cliente, {
-   foreignKey: "idCliente" });
 
 module.exports = Direccion;

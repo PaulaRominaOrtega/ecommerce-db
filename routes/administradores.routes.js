@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const administradoresController = require("../../controllers/administradores.controller");
+const administradoresController = require("../controllers/administradores.controller");
 
 const {
   validatePagination,
   validateAdministradorCreate,
   validateAdministradorUpdate,
   validateAdministradorId
-} = require("../../middleware/validation");
+} = require("../middleware/validation");
 
 // GET /api/administradores - Obtener todos los administradores
 router.get("/", validatePagination, administradoresController.getAdministradores);

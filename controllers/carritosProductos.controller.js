@@ -37,7 +37,7 @@ const getCarritosProductos = async (req, res) => {
 };
 
 // Obtener un registro por ID
-const getCarritoProducto = async (req, res) => {
+const getCarritoProductoById = async (req, res) => {
   try {
     const { id } = req.params;
     console.log("GET /carritos-productos/:id ", { id });
@@ -193,7 +193,7 @@ const deleteCarritoProducto = async (req, res) => {
 
 module.exports = {
   getCarritosProductos,
-  getCarritoProducto,
+  getCarritoProductoById,
   createCarritoProducto,
   updateCarritoProducto,
   deleteCarritoProducto,

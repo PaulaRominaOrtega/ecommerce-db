@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const categoriasController = require("../../controllers/categorias.controller");
+const categoriasController = require("../controllers/categorias.controller");
 const { 
     validatePagination, 
     validateCategoriaCreate, 
     validateCategoriaUpdate, 
     validateCategoriaId 
-} = require("../../middleware/validation");
+} = require("../middleware/validation");
 
 // GET /api/v1/categorias - Obtener todas las categorías
 router.get("/", validatePagination, categoriasController.getCategorias);

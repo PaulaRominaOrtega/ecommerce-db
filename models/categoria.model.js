@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
-const Producto= require("./producto.model");
+
 
 const Categoria = sequelize.define(
     "Categoria",
@@ -30,7 +30,5 @@ const Categoria = sequelize.define(
     }
   );
 
-  Categoria.hasMany(Producto, { 
-    foreignKey: "idCategoria" });
 
 module.exports = Categoria;

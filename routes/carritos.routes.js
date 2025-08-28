@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const carritosController = require("../../controllers/carritos.controller");
+const carritosController = require("../controllers/carritos.controller");
 // Si tenés validaciones específicas para carritos, las importás acá:
 // const { validateCarritoCreate, validateCarritoUpdate, validateCarritoId } = require("../../middleware/validation");
 

@@ -41,16 +41,6 @@ const Pedido = sequelize.define(
     }
   );
 
-  Pedido.belongsTo(Cliente, { 
-    foreignKey: "idCliente" });
-  Pedido.hasOne(Pago, { 
-    foreignKey: "idPedido", onDelete: "CASCADE" });
-  Pedido.hasOne(Envio, { 
-    foreignKey: "idPedido", onDelete: "CASCADE" });
-  Pedido.belongsToMany(Producto, {
-    through: PedidoProducto,
-    foreignKey: "idPedido",
-    otherKey: "idProducto",
-  });
+
 
   module.exports = Pedido;

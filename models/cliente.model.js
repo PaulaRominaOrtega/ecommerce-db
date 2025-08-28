@@ -1,7 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
-const Direccion = require("./direccion.model");
-const Pedido = require("./pedido.model");
+
 
 const Cliente = sequelize.define(
     "Cliente",
@@ -37,22 +36,6 @@ const Cliente = sequelize.define(
     }
   );
 
-  Cliente.hasMany(Direccion, {foreignKey: "idCliente",
-  });
-  Direccion.belongsTo(Cliente, {
-    foreignKey: "idCliente",
-  });
-  
-  Cliente.hasMany(Pedido, {
-    foreignKey: "idCliente",
-  });
-  Pedido.belongsTo(Cliente, {
-    foreignKey: "idCliente",
-  });
-  Cliente.hasOne (Carrito, {
-    foreignKey: "idCliente",
-    onDelete: "CASCADE"
-  })
 
 
 module.exports = Cliente;

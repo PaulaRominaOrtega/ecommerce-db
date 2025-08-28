@@ -69,6 +69,5 @@ const Producto = sequelize.define(
       timestamps: false,
     }
   );
-  Envio.belongsTo(Pedido, { foreignKey: "idPedido" });
   
 module.exports = Producto;

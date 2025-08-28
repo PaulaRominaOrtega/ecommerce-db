@@ -1,5 +1,5 @@
 // controllers/carritos.controller.js
-const { Carrito } = require("../../models/index.model");
+const { Carrito } = require("../models/index.model");
 const { validationResult } = require("express-validator");
 
 // Obtener todos los carritos con paginación
@@ -37,7 +37,7 @@ const getCarritos = async (req, res) => {
 };
 
 // Obtener un carrito por ID
-const getCarrito = async (req, res) => {
+const getCarritoById = async (req, res) => {
   try {
     const { id } = req.params;
     console.log("GET /carritos/:id ", { id });
@@ -185,7 +185,7 @@ const deleteCarrito = async (req, res) => {
 
 module.exports = {
   getCarritos,
-  getCarrito,
+  getCarritoById,
   createCarrito,
   updateCarrito,
   deleteCarrito,
